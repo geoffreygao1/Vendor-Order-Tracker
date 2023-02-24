@@ -1,7 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Store.Models;
 using System.Collections.Generic;
-using System;g
+using System;
+
 
 namespace Store.Tests
 {
@@ -12,7 +13,7 @@ namespace Store.Tests
     [TestInitialize]
     public void TestInitialize()
     {
-      testVendor = new Vendor();
+      testVendor = new Vendor("testName");
     }
 
     [TestMethod]
@@ -21,10 +22,10 @@ namespace Store.Tests
       Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
 
-     [TestMethod]
+    [TestMethod]
     public void VendorConstructor_ReturnsNameProperty_String()
     {
-      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
+      Assert.AreEqual("testName", testVendor.Name);
     }
   }
 }
