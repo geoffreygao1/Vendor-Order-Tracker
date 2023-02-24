@@ -44,7 +44,7 @@ namespace Store.Tests
     [TestMethod]
     public void VendorConstructor_HasOrdersList_Order()
     {
-      Order testOrder = new Order();
+      Order testOrder = new Order("testTitle", "tesDescription", "testDate", "testPrice");
       testVendor.Orders.Add(testOrder);
       Assert.AreEqual(1, testVendor.Orders.Count);
       Assert.AreEqual(typeof(Order), testVendor.Orders[0].GetType());
