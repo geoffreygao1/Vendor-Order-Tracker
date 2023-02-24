@@ -8,14 +8,14 @@ namespace Store.Controllers
   public class VendorsController : Controller
   {
 
-    [HttpGet("/categories")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     {
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
 
-    [HttpGet("/categories/new")]
+    [HttpGet("/vendors/new")]
     public ActionResult New()
     {
       return View();
