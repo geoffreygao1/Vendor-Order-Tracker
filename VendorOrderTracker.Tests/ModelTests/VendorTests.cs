@@ -28,10 +28,17 @@ namespace Store.Tests
     }
 
     [TestMethod]
+    public void VendorConstructor_ReturnsNameProperty_String()
+    {
+      Assert.AreEqual("testName", testVendor.Name);
+    }
+
+    [TestMethod]
     public void VendorConstructor_ReturnsDescriptionProperty_String()
     {
       Assert.AreEqual("testDescription", testVendor.Description);
     }
+
 
     [TestMethod]
     public void VendorConstructor_ReturnsVendorIDProperty_Int()

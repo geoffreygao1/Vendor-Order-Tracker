@@ -12,8 +12,13 @@ public class Order
   public int Id { get; }
   private static List<Order> _instances = new List<Order> { };
 
-  public Order(string inputTitle, string Description, string inputPrice, string Date)
+  public Order(string inputTitle, string inputDescription, string inputPrice, string inputDate)
   {
+    Title = inputTitle;
+    Description = inputDescription;
+    Price = inputPrice;
+    Date = inputDate;
+    IsPaid = false;
     _instances.Add(this);
     Id = _instances.Count;
   }
