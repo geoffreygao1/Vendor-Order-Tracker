@@ -20,5 +20,13 @@ namespace Store.Controllers
     {
       return View();
     }
+
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string inputName, string inputDescription)
+    {
+      Vendor newVendor = new Vendor(inputName, inputDescription);
+      return RedirectToAction("Index");
+    }
   }
 }
