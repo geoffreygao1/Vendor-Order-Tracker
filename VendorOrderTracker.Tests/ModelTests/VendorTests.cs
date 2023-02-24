@@ -27,5 +27,14 @@ namespace Store.Tests
     {
       Assert.AreEqual("testDescription", testVendor.Description);
     }
+
+    [TestMethod]
+    public void VendorConstructor_HasOrdersList_Order()
+    {
+      Order testOrder = new Order();
+      testVendor.Orders.Add(testOrder);
+      Assert.AreEqual(1, testVendor.Orders.Count);
+      Assert.AreEqual(typeof(Order), testVendor.Orders[0].GetType());
+    }
   }
 }
