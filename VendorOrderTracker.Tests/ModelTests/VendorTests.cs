@@ -13,7 +13,7 @@ namespace Store.Tests
     [TestInitialize]
     public void TestInitialize()
     {
-      testVendor = new Vendor("testName");
+      testVendor = new Vendor("testName", "testDescription");
     }
 
     [TestMethod]
@@ -23,9 +23,9 @@ namespace Store.Tests
     }
 
     [TestMethod]
-    public void VendorConstructor_ReturnsNameProperty_String()
+    public void VendorConstructor_ReturnsDescriptionProperty_String()
     {
-      Assert.AreEqual("testName", testVendor.Name);
+      Assert.AreEqual("testDescription", testVendor.Description);
     }
   }
 }
