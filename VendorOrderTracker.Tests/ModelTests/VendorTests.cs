@@ -1,18 +1,30 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Store.Models;
 using System.Collections.Generic;
-using System;
+using System;g
 
 namespace Store.Tests
 {
   [TestClass]
   public class VendorTests
   {
+    Vendor testVendor;
+    [TestInitialize]
+    public void TestInitialize()
+    {
+      testVendor = new Vendor();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor();
-      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
-}
+
+     [TestMethod]
+    public void VendorConstructor_ReturnsNameProperty_String()
+    {
+      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
+    }
+  }
 }
