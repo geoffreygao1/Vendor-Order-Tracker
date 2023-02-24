@@ -3,16 +3,19 @@
 }
 @using Store.Models;
 
-    <h1>Vendors</h1>
+    <h1>Vendors:</h1>
 
     @if (@Model.Count == 0)
-    {
-      <h3>No Vendors have been added yet!</h3>
-    } 
+{
+        <h3>No Vendors have been added yet!</h3>
+} 
 
-    @foreach (Vendor vendor in Model)
-    {
-      <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
-    }
+    <ul>
+  @foreach (Vendor vendor in Model)
+  {
+        <li><a href='/vendors/@vendor.Id'>@vendor.Name</a></li>
+  }
+    </ul>
 
     <p><a href='/'>Back home</a></p>
+    <p><a href='/vendors/new'>Add a new Vendor</a></p>
