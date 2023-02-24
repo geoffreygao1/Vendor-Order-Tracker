@@ -7,8 +7,13 @@ using System;
 namespace Store.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     Vendor testVendor;
     [TestInitialize]
     public void TestInitialize()
@@ -26,6 +31,14 @@ namespace Store.Tests
     public void VendorConstructor_ReturnsDescriptionProperty_String()
     {
       Assert.AreEqual("testDescription", testVendor.Description);
+    }
+
+    [TestMethod]
+    public void VendorConstructor_ReturnsVendorIDProperty_Int()
+    {
+      Assert.AreEqual(1, testVendor.Id);
+      Vendor testVendor2 = new Vendor("testName", "testDescription");
+      Assert.AreEqual(2, testVendor2.Id);
     }
 
     [TestMethod]

@@ -6,10 +6,20 @@ public class Vendor
 {
   public string Name { get; set; }
   public string Description { get; set; }
+  public int Id { get; }
+  private static List<Vendor> _instances = new List<Vendor> { };
+
   public List<Order> Orders = new List<Order>() { };
   public Vendor(string inputName, string inputDescription)
   {
     Name = inputName;
     Description = inputDescription;
+    _instances.Add(this);
+    Id = _instances.Count;
+  }
+
+  public static void ClearAll()
+  {
+    _instances.Clear();
   }
 }
