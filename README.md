@@ -20,7 +20,7 @@ _This application contains a website that allows a user to track vendors and ord
 * _Clone this repository_
 * _Open your shell (e.g., Terminal or GitBash) and navigate into the VendorOrderTracker directory_
    - _In the terminal, run the program with `dotnet watch run` to start the project in development mode with a watcher_
-   - _If the application does not automatically launch, open the browser to [https://localhost:5001])(https://localhost:5001)_
+   - _If the application does not automatically launch, open the browser to [https://localhost:5001](https://localhost:5001)_
 * _To run the MS Tests, navigate into the VendorOrderTracker.Tests directory_
   - _In the terminal, built the program with `dotnet build`, and then test the program with `dotnet test`_
 
