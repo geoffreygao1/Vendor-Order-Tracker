@@ -1,13 +1,14 @@
 @{
   Layout = "_Layout";
 }
+
 @using Store.Models;
 
 <h2>Vendor Name: </h2>
-<p>@Model["vendor"].Name</p>
-<h3>Vendor Description:</h3>
-<p>@Model["vendor"].Description</p>
-<h3>Orders:</h3>
+<h3>@Model["vendor"].Name</h3>
+<h2>Vendor Description:</h3>
+<h4>@Model["vendor"].Description</h4>
+<h2>Orders:</h3>
 
 <ol>
   @foreach (Order order in @Model["orders"])
@@ -20,7 +21,7 @@
   }
 </ol>
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+<form action='/vendors/@Model["vendor"].Id/orders/new' method="get"><button type="submit">Add a new order</button></form>
 <form action='/vendors/@Model["vendor"].Id/orders/delete' method="post"><button type="submit">Delete All Orders</button>
 </form>
 <p><a href='/vendors'>Return to vendor list</a></p>

@@ -5,3 +5,7 @@ body {
 form {
   display: inline;
 }
+
+h2 {
+  text-decoration: underline;
+}
