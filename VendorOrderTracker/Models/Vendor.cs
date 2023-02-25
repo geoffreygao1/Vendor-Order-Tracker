@@ -27,10 +27,22 @@ public class Vendor
     return _instances[searchId - 1];
   }
 
-  public static void Delete(int searchId)
+  public static void DeleteVendor(int searchId)
   {
-    _instances.RemoveAt(searchId - 1);
+    foreach (Vendor vendor in _instances)
+    {
+      if (vendor.Id == (searchId - 1))
+      {
+        _instances.Remove(vendor);
+      }
+    }
   }
+
+  public void DeleteAllOrders()
+  {
+    Orders.Clear();
+  }
+
   public static void ClearAll()
   {
     _instances.Clear();

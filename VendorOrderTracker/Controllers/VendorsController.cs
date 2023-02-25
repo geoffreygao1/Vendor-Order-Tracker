@@ -29,19 +29,18 @@ namespace Store.Controllers
     }
 
     [HttpPost("/vendors/delete")]
-    public ActionResult DeleteAll()
+    public ActionResult DeleteAllVendors()
     {
       Vendor.ClearAll();
       return RedirectToAction("Index");
     }
 
     [HttpPost("/vendors/{id}/delete")]
-    public ActionResult Delete(int id)
+    public ActionResult DeleteVendor(int id)
     {
-      Vendor.Delete(id);
+      Vendor.DeleteVendor(id);
       return RedirectToAction("Index");
     }
-
 
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
@@ -64,6 +63,18 @@ namespace Store.Controllers
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders/delete")]
+    public ActionResult DeleteAllOrders(int vendorId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      vendor.DeleteAllOrders();
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      List<Order> vendorOrders = vendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", vendor);
       return View("Show", model);
     }
   }
