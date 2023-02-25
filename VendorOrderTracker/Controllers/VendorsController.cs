@@ -71,11 +71,17 @@ namespace Store.Controllers
     {
       Vendor vendor = Vendor.Find(vendorId);
       vendor.DeleteAllOrders();
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      List<Order> vendorOrders = vendor.Orders;
-      model.Add("orders", vendorOrders);
-      model.Add("vendor", vendor);
-      return View("Show", model);
+      return RedirectToAction("Show", new { id = vendorId });
+
+    }
+
+
+    [HttpPost("/vendors/{vendorId}/orders/{orderId}/delete")]
+    public ActionResult DeleteOrder(int vendorId, int orderId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      vendor.DeleteOrder(orderId);
+      return RedirectToAction("Show", new { id = vendorId });
     }
   }
 }

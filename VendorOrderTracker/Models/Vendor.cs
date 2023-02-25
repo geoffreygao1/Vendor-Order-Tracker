@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Store.Models;
 
@@ -41,6 +42,18 @@ public class Vendor
   public void DeleteAllOrders()
   {
     Orders.Clear();
+  }
+
+  public void DeleteOrder(int searchId)
+  {
+    foreach (Order order in Orders)
+    {
+      if (order.Id == (searchId))
+      {
+        Orders.Remove(order);
+        break;
+      }
+    }
   }
 
   public static void ClearAll()

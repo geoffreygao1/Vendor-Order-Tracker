@@ -24,11 +24,5 @@ namespace Store.Controllers
       model.Add("order", order);
       return View(model);
     }
-
-    [HttpPost("/vendors/{vendorId}/orders/{orderId}/delete")]
-    public ActionResult Delete(int vendorId, int orderId)
-    {
-      return RedirectToAction("Index");
-    }
   }
 }
