@@ -27,6 +27,10 @@ public class Vendor
     return _instances[searchId - 1];
   }
 
+  public static void Delete(int searchId)
+  {
+    _instances.RemoveAt(searchId - 1);
+  }
   public static void ClearAll()
   {
     _instances.Clear();
