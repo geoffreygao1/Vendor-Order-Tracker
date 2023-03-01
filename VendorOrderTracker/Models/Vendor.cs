@@ -32,9 +32,10 @@ public class Vendor
   {
     foreach (Vendor vendor in _instances)
     {
-      if (vendor.Id == (searchId - 1))
+      if (vendor.Id == (searchId))
       {
         _instances.Remove(vendor);
+        break;
       }
     }
   }
